@@ -9,4 +9,27 @@ class ErrorCalculator:
         self.error                  =   summary
 
 
-    def get_residuals
+    def get_residuals():
+
+        residuals =
+        return residuals
+
+    def get_standardised_residuals():
+
+        standardised_residuals =
+        return
+
+    def get_mse():
+
+        mse =
+        return mse
+
+    def get_rmse():
+
+        rmse =
+        return rmse
+
+    def error_summary():
+
+        error =
+        return error 
