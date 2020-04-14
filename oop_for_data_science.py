@@ -1,35 +1,35 @@
 class ErrorCalculator:
 
-    def __init__(self, residuals, standardised_residuals, mse, rmse, error):
+    def __init__(self,):
 
-        self.residuals              =   residuals
-        self.standardised_residuals =   standardised_residuals
-        self.mse                    =   mse
-        self.rmse                   =   rmse
-        self.error                  =   summary
+        self.              =   residuals
+        self. =   standardised_residuals
+        self.                    =   mse
+        self.                   =   rmse
+        self.                 =   summary
 
 
-    def get_residuals():
+    def get_residuals(self):
 
         residuals =
         return residuals
 
-    def get_standardised_residuals():
+    def get_standardised_residuals(self):
 
         standardised_residuals =
         return
 
-    def get_mse():
+    def get_mse(self):
 
         mse =
         return mse
 
-    def get_rmse():
+    def get_rmse(self):
 
         rmse =
         return rmse
 
-    def error_summary():
+    def error_summary(self):
 
         error =
-        return error 
+        return error
