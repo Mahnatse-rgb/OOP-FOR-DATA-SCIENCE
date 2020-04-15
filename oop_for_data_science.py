@@ -7,7 +7,7 @@ class ErrorCalculator:
         self.y          =   np.array(y)       # target
         self.y_pred     =   np.array(y_pred)  # prediction of target
 
-    # check that y is 1D and len of y_pred is equall to len of y
+    # check that len of y_pred is equall to len of y
 
     def dimention(self):
 
@@ -15,7 +15,7 @@ class ErrorCalculator:
             return True
 
         else:
-            raise ValueError(f'shape of y: {self.y} != shape of y_pred: {self.y_pred}')    
+            raise ValueError(f'shape of y: {self.y} != shape of y_pred: {self.y_pred}')
 
 
 
