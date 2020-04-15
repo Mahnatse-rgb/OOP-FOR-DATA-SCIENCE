@@ -80,4 +80,8 @@ class HistogramPlotter(Plotter):
         Plotter.__init__(self, y, y_pred)
 
 #--------------------------------Scatter Plot class -----------------------
-c
+class ScatterPlot(Plotter):
+
+    def __init__(self, y, y_pred):
+        Plotter.__init__(self, y, y_pred):
+    
