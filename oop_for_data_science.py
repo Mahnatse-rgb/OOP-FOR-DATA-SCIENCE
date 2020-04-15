@@ -83,5 +83,14 @@ class HistogramPlotter(Plotter):
 class ScatterPlot(Plotter):
 
     def __init__(self, y, y_pred):
-        Plotter.__init__(self, y, y_pred):
-    
+        Plotter.__init__(self, y, y_pred)
+
+    def plot(self):
+        if self.residuals is None:
+            self.residuals = self.run_calculations()
+
+        plt.scatter(self.y_pred, self.residuals())
+        plt.title('Scatter Plot of Predictions as per Actual Value')
+        plt.xlabel('Actual Values')
+        plt.ylabel('Predictions')
+        return plt.show()
