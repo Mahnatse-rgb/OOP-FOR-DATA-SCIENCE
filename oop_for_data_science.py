@@ -1,12 +1,21 @@
 class ErrorCalculator:
 
-    def __init__(self,):
+    def __init__(self, y, y_pred):
 
         self.              =   residuals
         self. =   standardised_residuals
         self.                    =   mse
         self.                   =   rmse
         self.                 =   summary
+
+    import numpy as np
+
+    def size_inspect(y):
+
+        if isinstance(y, )
+
+
+
 
 
     def get_residuals(self):
