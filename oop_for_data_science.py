@@ -1,11 +1,21 @@
+import numpy as np
+
 class ErrorCalculator:
 
     def __init__(self, y, y_pred):
 
-        self.y          =   y       # target
-        self.y_pred     =   y_pred  # prediction of target
+        self.y          =   np.array(y)       # target
+        self.y_pred     =   np.array(y_pred)  # prediction of target
 
-    import numpy as np
+    # check that y is 1D and len of y_pred is equall to len of y
+
+    def dimention(self):
+
+        if len(self.y.shape) == len(self.y_pred.shape):
+            return True
+
+        else:
+            raise ValueError(f'shape of y: {self.y} != shape of y_pred: {self.y_pred}')    
 
 
 
