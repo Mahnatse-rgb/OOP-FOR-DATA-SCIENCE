@@ -50,3 +50,26 @@ class ErrorCalculator:
         print(f'maximum standard residuals: {max(std_resid)}')
         print(f'MSE: {self.get_mse()}')
         print(f'RSME: {self.get_rmse()}')
+
+#-----------------------------Plot  imports---------------------------
+import matplotlib.pyplot as plt
+
+#------------------------------------------------------------------------
+
+class Plotter():
+
+    def __init__(self, y, y_pred):
+        self.y          =   y
+        self.y_pred     =   y_pred
+
+    def run_calculations(self):
+        residuals = self.y - self.y_pred
+        return residuals
+
+    def plot(self):
+
+        plt.hist(residuals)
+        plt.title('Distribution of Residuals')
+        plt.xlabel('Residuals')
+        plt.ylabel('Frequency')
+        return plt.show()
