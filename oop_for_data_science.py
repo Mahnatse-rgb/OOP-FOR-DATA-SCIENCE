@@ -54,8 +54,7 @@ class ErrorCalculator:
 #-----------------------------Plot  imports---------------------------
 import matplotlib.pyplot as plt
 
-#------------------------------------------------------------------------
-
+#------------------------------Plotter Class-----------------------------
 class Plotter():
 
     def __init__(self, y, y_pred):
@@ -73,3 +72,9 @@ class Plotter():
         plt.xlabel('Residuals')
         plt.ylabel('Frequency')
         return plt.show()
+
+#--------------------------------Histogram class--------------------------
+class HistogramPlotter(Plotter):
+
+    def __init__(self, y, y_pred):
+        Plotter.__init__(self, y, y_pred)
