@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 class ErrorCalculator:
 
@@ -9,7 +10,7 @@ class ErrorCalculator:
 
     # check that len of y_pred is equall to len of y
 
-    def dimention(self):
+    def dimension(self):
 
         if len(self.y.shape) == len(self.y_pred.shape):
             return True
@@ -26,7 +27,7 @@ class ErrorCalculator:
 
     def get_standardised_residuals(self):
 
-        standardised_residuals = self.get_residuals() / (self.get_residuals()/std())
+        standardised_residuals = self.get_residuals() / (self.get_residuals().std())
         return standardised_residuals
 
     def get_mse(self):
@@ -51,13 +52,11 @@ class ErrorCalculator:
         print(f'MSE: {self.get_mse()}')
         print(f'RSME: {self.get_rmse()}')
 
-#-----------------------------Plot  imports---------------------------
-import matplotlib.pyplot as plt
-
 #------------------------------Plotter Class-----------------------------
-class Plotter():
+class Plotter(ErrorCalculator):
 
     def __init__(self, y, y_pred):
+        super().__init__(y, y_pred)
         self.y          =   y
         self.y_pred     =   y_pred
 
@@ -67,7 +66,7 @@ class Plotter():
 
     def plot(self):
 
-        plt.hist(residuals)
+        plt.hist(self.y - self.y_pred)
         plt.title('Distribution of Residuals')
         plt.xlabel('Residuals')
         plt.ylabel('Frequency')
@@ -77,13 +76,13 @@ class Plotter():
 class HistogramPlotter(Plotter):
 
     def __init__(self, y, y_pred):
-        Plotter.__init__(self, y, y_pred)
+        super().__init__(y, y_pred)
 
 #--------------------------------Scatter Plot class -----------------------
 class ScatterPlot(Plotter):
 
     def __init__(self, y, y_pred):
-        Plotter.__init__(self, y, y_pred)
+        super().__init__(y, y_pred)
 
     def plot(self):
         if self.residuals is None:
