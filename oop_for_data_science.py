@@ -85,10 +85,8 @@ class ScatterPlot(Plotter):
         super().__init__(y, y_pred)
 
     def plot(self):
-        if self.residuals is None:
-            self.residuals = self.run_calculations()
-
-        plt.scatter(self.y_pred, self.residuals())
+        
+        plt.scatter(self.y, self.y_pred)
         plt.title('Scatter Plot of Predictions as per Actual Value')
         plt.xlabel('Actual Values')
         plt.ylabel('Predictions')
